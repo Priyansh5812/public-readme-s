@@ -198,23 +198,3 @@ For the data whose values can be customized eg Scoring and etc are being stored 
 2. Keep param passing in tight loops as "pass-by-reference"
 3. Event-driven communication
 4. Avoided Update Functions as much as possible.
-
-## Corner Cases tackled 
-
-1. While Adding the words in the grid, it is possible to repeat on same tiles for word addition resulting in incomplete / wrong word addition 
-
-```c#        
-    // Get the neighbours
-    neighbours = GetNeighbours(startTile.GetTileIndex());
-
-    // CORNER CASE : words like "fgf" can redirect again to one of the accquired tiles in the past calls. Therefore removing them from the list of neighbours
-    foreach (var lastTiles in tiles)
-    {
-        neighbours.Remove(lastTiles);
-    }
-```
-
-2. User can exploit the grid by dragging the finger out of the grid and pointing it to a farther cell. In order to fix this I added a boundary checks in the borders, which triggers the "End Word Selection".
-
-<img width="788" height="842" alt="Screenshot 2025-08-10 161832" src="https://github.com/user-attachments/assets/5dc13852-3773-4703-9f35-6e6c36008080" />
-
