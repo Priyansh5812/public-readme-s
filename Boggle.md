@@ -2,6 +2,7 @@
 This is a curated version of the game’s README.
 The original repository contains source code, so it is kept private.
 This version focuses on explaining the core gameplay mechanics and design.
+However some snippets which can be seen publicly are provided
 ```
 
 # Word Boggle Overview
